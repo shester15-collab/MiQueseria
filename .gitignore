@@ -1,0 +1,36 @@
+# Dependencias
+node_modules/
+
+# Build web
+dist/
+
+# Gradle
+.gradle/
+.gradle-user/
+
+# NPM cache
+.npm-cache/
+
+# Android build
+android/.gradle/
+android/build/
+android/app/build/
+
+# Android IDE
+android/.idea/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+.env
+.env.*
+!.env.example

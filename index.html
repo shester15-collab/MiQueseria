@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4e6b2b" />
+    <title>Mi Quesería</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-brand">
+          <div class="brand-icon">🧀</div>
+          <div>
+            <strong>Mi Quesería</strong>
+            <span>Gestión de pedidos</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button data-page="dashboard">
+            <span class="nav-icon">⌂</span>
+            <span>Inicio</span>
+          </button>
+
+          <button data-page="newOrder">
+            <span class="nav-icon">＋</span>
+            <span>Nueva orden</span>
+          </button>
+
+          <button data-page="orders">
+            <span class="nav-icon">▣</span>
+            <span>Pedidos</span>
+          </button>
+
+          <button data-page="products">
+            <span class="nav-icon">◇</span>
+            <span>Productos</span>
+          </button>
+
+          <button data-page="stock">
+            <span class="nav-icon">□</span>
+            <span>Stock</span>
+          </button>
+
+          <button data-page="customers">
+            <span class="nav-icon">♙</span>
+            <span>Clientes</span>
+          </button>
+
+          <button data-page="providers">
+            <span class="nav-icon">▱</span>
+            <span>Proveedores</span>
+          </button>
+
+          <button data-page="reports">
+            <span class="nav-icon">▥</span>
+            <span>Reportes</span>
+          </button>
+
+          <button data-page="help">
+            <span class="nav-icon">?</span>
+            <span>Ayuda</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-info">
+            <div class="user-avatar">EZ</div>
+            <div>
+              <strong>Ezequiel Antelo</strong>
+              <span>Administrador</span>
+            </div>
+          </div>
+
+          <button id="close-menu" class="close-menu">
+            ← <span>Cerrar menú</span>
+          </button>
+        </div>
+      </aside>
+
+      <div id="overlay" class="overlay"></div>
+
+      <section class="main-area">
+        <header class="topbar">
+          <button id="menu-btn" aria-label="Abrir menú">☰</button>
+
+          <div class="topbar-title">
+            <h1>Mi Quesería</h1>
+            <span id="page-title">Resumen de pedidos</span>
+          </div>
+        </header>
+
+        <section id="content" aria-live="polite"></section>
+      </section>
+    </main>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
