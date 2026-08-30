@@ -3,7 +3,7 @@ import { App } from "@capacitor/app";
 import { initNavigation } from "./navigation/navigation.js";
 import { dashboard } from "./views/dashboard.js";
 import { newOrder } from "./views/newOrder.js";
-import { orders } from "./views/orders.js";
+import { orders, editOrder } from "./views/orders.js";
 import { stock } from "./views/stock.js";
 import { products } from "./views/products.js";
 import { customers } from "./views/customers.js";
@@ -15,9 +15,11 @@ const content = document.querySelector("#content");
 const subtitle = document.querySelector("#page-title");
 
 let tab = "dashboard";
+let selectedOrderId = null;
 
-function setTab(next) {
+function setTab(next, orderId = null) {
   tab = next;
+  selectedOrderId = orderId;
   render();
 }
 
@@ -26,6 +28,7 @@ function render() {
     dashboard: "Resumen de pedidos",
     newOrder: "Registrar un pedido",
     orders: "Historial de pedidos",
+    editOrder:"Editar pedido",
     products: "Catálogo de productos",
     stock: "Existencias",
     customers: "Catálogo de clientes",
@@ -40,12 +43,14 @@ function render() {
   dashboard: () => dashboard(content, setTab),
   newOrder: () => newOrder(content, setTab),
   orders: () => orders(content, setTab, render),
+  editOrder: () => editOrder(content, setTab, render, selectedOrderId),
   products: () => products(content),
   stock: () => stock(content),
   customers: () => customers(content),
   providers: () => providers(content),
   reports: () => reports(content, setTab),
   help: () => help(content),
+  
 };
 
   if (typeof pages[tab] !== "function") {
